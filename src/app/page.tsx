@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation"
 import HomeBody from "@/components/homeComponents/HomeBody"
 
 export default function LandingPage() {
-  const router=useRouter()
   return (
     <div>
 <HomeNavbar/>

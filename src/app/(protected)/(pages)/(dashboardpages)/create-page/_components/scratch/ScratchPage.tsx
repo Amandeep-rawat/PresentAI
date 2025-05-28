@@ -22,7 +22,7 @@ const ScratchPage = ({onBack}:Props) => {
 
 
     const router =useRouter()
-    const {setProject,slides}=useSlideStore()
+    const {setProject}=useSlideStore()
     const {outlines,addMultipleOutlines,resetOutlines,addOutlines}=useScratchStore()
     const [editText,setEditText]=useState('')
     const [editingCards,setEditingCards]=useState<string | null>(null)

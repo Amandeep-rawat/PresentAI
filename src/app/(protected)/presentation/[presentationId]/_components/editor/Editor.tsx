@@ -80,7 +80,7 @@ export const DraggableSlide:React.FC<DraggableSlideProps>=({handleDelete,index,i
         canDrag:isEditable,
     })
 
-    const [_,drop]=useDrop({
+    const [,drop]=useDrop({
         accept:['SLIDE','LAYOUT'],
         hover(item:{index:number; type:string}){
             if(!ref.current || !isEditable ){

@@ -1,7 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { useSlideStore } from '@/store/useSlideStore'
 import { LayoutTemplate, Palette, Type } from 'lucide-react'
 import React from 'react'
 import LayoutChooser from './tabs/LayoutChooser'

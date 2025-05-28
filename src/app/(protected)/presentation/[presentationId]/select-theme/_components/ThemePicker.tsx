@@ -9,7 +9,6 @@ import React, { useState } from 'react'
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
 import { MultiStepLoader as Loader } from '@/components/ui/multi-step-loading'
-import { IconSquareRoundedX } from "@tabler/icons-react";
 
 type Props = {
   selectedTheme: Theme;
@@ -29,7 +28,7 @@ const loadingStates = [
 ];
 const ThemePicker = ({ onThemeSelect, selectedTheme, themes }: Props) => {
   const router = useRouter();
-  const { project, slides, currentTheme, setSlides } = useSlideStore();
+  const { project,  currentTheme, setSlides } = useSlideStore();
   const [loading, setLoading] = useState(false)
   const params = useParams();
   const HandleGenerateLayouts = async () => {
@@ -58,7 +57,7 @@ const ThemePicker = ({ onThemeSelect, selectedTheme, themes }: Props) => {
       router.push(`/presentation/${project?.id}`)
       setSlides(res.data)
 
-    } catch (error) {
+    } catch {
       toast.error('Error', {
         description: 'faild to genrate layout'
       })

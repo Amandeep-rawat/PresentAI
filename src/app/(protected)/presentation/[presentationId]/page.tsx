@@ -13,7 +13,7 @@ import Navbar from './_components/Navbar/Navbar';
 import LayoutPreview from './_components/editor-sidebar/leftsidebar/LayoutPreview';
 import Editor from './_components/editor/Editor';
 import EditorSidebar from './_components/rightsidebar';
-const page = () => {
+const Page = () => {
   // wip 
   const {  currentTheme,  setCurrentTheme, setProject, setSlides } = useSlideStore()
   const params = useParams();
@@ -37,6 +37,7 @@ const page = () => {
           setProject(res.data);
           setSlides(JSON.parse(JSON.stringify(res.data.slides)));
         } catch (error) {
+          console.log(error);
           toast.error("Error", {
             description: "An error occured"
           })
@@ -77,4 +78,4 @@ const page = () => {
   );
 }
 
-export default page;
+export default Page;

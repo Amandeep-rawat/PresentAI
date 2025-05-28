@@ -1,6 +1,5 @@
 'use client';
-import { onAuthenticateUser } from '@/actions/user';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, Settings2 } from 'lucide-react';
@@ -8,16 +7,9 @@ import { motion } from 'framer-motion';
 
 const Page = () => {
   const router = useRouter();
-  const [ setCheckUser] = useState<any>(null);
+ 
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const user = await onAuthenticateUser();
-      setCheckUser(user);
-    };
-    fetchUser();
-  }, []);
-
+ 
   const handleBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 2) {
       router.back();
