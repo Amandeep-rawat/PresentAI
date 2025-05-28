@@ -257,7 +257,7 @@ const HomeBody = () => {
                 Perfect Plan
               </span>
             </h2>
-            <p className="text-xl text-gray-300">Start free, upgrade when you're ready</p>
+            <p className="text-xl text-gray-300">Start free, upgrade when you are ready</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -382,7 +382,7 @@ const HomeBody = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-300 mb-10">
-              Join thousands of professionals who've revolutionized their presentation workflow with AI
+              Join thousands of professionals who have revolutionized their presentation workflow with AI
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
