@@ -1,7 +1,7 @@
 'use client'
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable';
 import { useSlideStore } from '@/store/useSlideStore';
-import { RowsIcon } from 'lucide-react';
+// import { RowsIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 
 interface TableComponentProps {
@@ -23,7 +23,7 @@ const TableComponent = ({
 }: TableComponentProps) => {
 const [colSizes, setColSizes] = useState<number[]>([]);
 const [rowSizes, setRowSizes] = useState<number[]>([]);
-const {currentSlide,currentTheme} =useSlideStore()
+const {currentTheme} =useSlideStore()
     const [tableData, setTableData] = useState<string[][]>(() => {
         if (content.length === 0 || content[0].length === 0) {
             // Must use `Array.from` or a map to avoid shared inner array references

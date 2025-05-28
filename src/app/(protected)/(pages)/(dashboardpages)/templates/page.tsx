@@ -45,8 +45,7 @@ const TemplatePage = () => {
           transition={{ delay: 0.4 }}
           className="mt-4 text-lg text-purple-600"
         >
-          This page is currently under construction. We're working hard to bring
-          it to life!
+          This page is currently under construction.We&apos;re working hard to bring it to life!
         </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

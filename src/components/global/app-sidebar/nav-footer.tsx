@@ -1,17 +1,16 @@
 "use client"
 // import { buySubscription } from '@/actions/lemonSqueezy';
 import { Button } from '@/components/ui/button';
-import { Sidebar, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
+import {  SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { SignedIn, UserButton, useUser } from '@clerk/nextjs';
 import { User } from '@prisma/client';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import { toast } from 'sonner';
 
 const NavFooter = ({prismaUser}:{prismaUser:User}) => {
     const {isLoaded,isSignedIn,user}=useUser();
-    const [loading,setLoading]=useState(false);
-    const router=useRouter();
+    const [loading]=useState(false);
+    // const router=useRouter();
     if(!isLoaded || !isSignedIn){
         return null
     }

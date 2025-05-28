@@ -4,8 +4,7 @@ import { User } from '@prisma/client';
 import React from 'react';
 import SearchBar from './upper-info-searchbar';
 import ThemeSwitcher from '../mode-toggle';
-import { Button } from '@/components/ui/button';
-import { Plus, Upload } from 'lucide-react';
+
 import NewProjectButton from './new-project-button';
 
 const UpperInfoBar = ({user }:{user:User;}) => {

@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils"
 import { useSlideStore } from "@/store/useSlideStore"
 import React, { useEffect, useRef } from "react"
-import { text } from "stream/consumers"
+// import { text } from "stream/consumers"
 
 interface HeadingProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement>{
     className?:string
@@ -11,7 +11,7 @@ interface HeadingProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement>
     isPreview?:boolean
 }
 const createHeading=(displayName:string,defaultClassname:string)=>{
-const heading=React.forwardRef<HTMLTextAreaElement ,HeadingProps>(({children,className,styles,isPreview=false, ...props},ref)=>{
+const heading=React.forwardRef<HTMLTextAreaElement ,HeadingProps>(({className,styles,isPreview=false, ...props},ref)=>{
     const textareaRef=useRef<HTMLTextAreaElement>(null);
   const {currentTheme}=useSlideStore()
     useEffect(()=>{

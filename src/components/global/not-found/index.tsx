@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
-import { ImageOff, ArrowLeft } from 'lucide-react';
+import { ImageOff } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 
 const NotFound = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <motion.div

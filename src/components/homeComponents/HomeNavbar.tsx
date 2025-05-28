@@ -10,7 +10,7 @@ import { useUser } from "@clerk/nextjs"
 export default function HomeNavbar() {
   const [isOpen, setIsOpen] = useState(false)
 const router=useRouter()
-  const { isSignedIn, user, isLoaded } = useUser();
+  const {  user } = useUser();
   return (
     <motion.nav
       initial={{ y: -100 }}

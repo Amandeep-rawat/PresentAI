@@ -7,10 +7,8 @@ import {
    
     SidebarContent,
     SidebarFooter,
-    SidebarGroup,
     SidebarHeader,
   } from "@/components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from '../../ui/avatar';
 import NavMain from './nav-main';
 import { data } from '@/lib/constants';
 import RecentOpen from './recent-open';

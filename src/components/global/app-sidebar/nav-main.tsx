@@ -1,6 +1,5 @@
 "use client"
 import { SidebarGroup, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { Clock } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -24,7 +23,7 @@ const NavMain = ({items}:{
     <SidebarGroup className='p-0'>
         <SidebarMenu>
             {
-                items.map((item,index)=>{
+                items.map((item)=>{
                     return (
                         <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild tooltip={item.title} className={`${pathname.includes(item.url) && 'bg-blue-600'}`}>

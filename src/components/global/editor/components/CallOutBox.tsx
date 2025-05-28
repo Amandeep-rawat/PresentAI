@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import { color } from 'framer-motion';
 import { AlertCircle, AlertTriangle, CheckCircle, HelpCircle, Info } from 'lucide-react';
 import React from 'react'
 

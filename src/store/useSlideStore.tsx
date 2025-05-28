@@ -1,10 +1,9 @@
 import { ContentItem, Slide, Theme } from '@/lib/types';
 import { Project } from '@prisma/client';
-import { stat } from 'fs';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from "uuid"
-import { string } from 'cohere-ai/core/schemas';
+
 interface SlideState {
   slides: Slide[];
   setSlides: (slides: Slide[]) => void;

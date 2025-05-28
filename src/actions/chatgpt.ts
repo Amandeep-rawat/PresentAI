@@ -5,7 +5,7 @@ import { client } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 import { v4 as uuidv4 } from 'uuid'
 import { ContentItem, ContentType, Slide } from "@/lib/types";
-const ImagePig = require('imagepig');
+// const ImagePig = require('imagepig');
 import {cloudinary} from '../lib/cloudinary'; // your Cloudinary config file
 import fetch from 'node-fetch'; // If running server-side in Node.js
 import FormData from 'form-data';
@@ -63,6 +63,7 @@ Ensure that the JSON is valid and properly formatted. Do not include any other t
         };
       } catch (err) {
         return {
+          
           status: 500,
           error: "Invalid JSON format",
         };

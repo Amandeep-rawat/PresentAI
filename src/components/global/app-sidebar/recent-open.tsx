@@ -11,7 +11,7 @@ type Props={
     recentProjects:Project[]
 }
 const RecentOpen = ({recentProjects}:Props) => {
-    const {setSlides,slides}=useSlideStore()
+    const {setSlides}=useSlideStore()
     const router=useRouter()
     const handleClick=async(projectId:string,slides:JsonValue)=>{
       
