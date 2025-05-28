@@ -117,6 +117,7 @@ try {
 setCurrentAiPrompt("");
 resetOutlines();
 } catch (error) {
+  console.log(error)
   toast.error("Error",{
     description:"Failed to create Project"
   })

@@ -141,7 +141,7 @@ if(isEditable){
 }
 
 const Editor = ({isEditable}: Props) => {
-    const {currentTheme,addSlideIndex,currentSlide,removeSlide,getOrderedSlides,project,reorderedSlides,slides}=useSlideStore()
+    const {addSlideIndex,currentSlide,removeSlide,getOrderedSlides,project,reorderedSlides,slides}=useSlideStore()
     const [loading,setLoading]=useState(true)
     const orderedSlides=getOrderedSlides();
 

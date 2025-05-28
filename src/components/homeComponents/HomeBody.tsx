@@ -4,7 +4,6 @@ import { ArrowRight, Sparkles, Zap, Users, Crown, Check, Star, Play, Wand2, Brai
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import HomeFooter from "@/components/homeComponents/HomeFooter"
-import HomeNavbar from "@/components/homeComponents/HomeNavbar"
 import { useRouter } from "next/navigation"
 const HomeBody = () => {
 

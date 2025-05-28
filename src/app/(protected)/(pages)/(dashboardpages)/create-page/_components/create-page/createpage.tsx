@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { motion } from 'framer-motion';
 import { containerVaraints, CreatePageCard, itemVariants } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const CreatePage = ({ onSelectOption }: Props) => {
-    const {prompts,setPage}=usePromptStore()
+    const {prompts}=usePromptStore()
     // useEffect(()=>{
     //   setPage('create')
     // },[])

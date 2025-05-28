@@ -45,7 +45,7 @@ const DeleteAllButton = ({projects}: Props) => {
 
         } catch (error) {
             
-        
+        console.log(error);
             toast.error("Error",{
                 description:"Something went wrong"
             })

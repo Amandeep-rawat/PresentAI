@@ -10,10 +10,9 @@ import { component } from '@/lib/constants'
 import ComponentCard from './tabs/components-tabs/ComponentPreview'
 import ThemeChooser from './tabs/ThemeChooser'
 
-type Props = {}
 
-const EditorSidebar = (props: Props) => {
-    const {currentTheme}=useSlideStore()
+
+const EditorSidebar = () => {
   return (
     <div className='fixed top-1/2 right-0 transform -translate-y-1/2 z-10'><div className='rounded-xl border-r-0 border border-gray-400 shadow-lg p-2 flex flex-col items-center space-y-4'>
         <Popover>

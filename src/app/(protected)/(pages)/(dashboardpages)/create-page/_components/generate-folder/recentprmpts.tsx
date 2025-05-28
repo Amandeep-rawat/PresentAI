@@ -4,25 +4,23 @@ import { motion } from "framer-motion"
 import { containerVaraints, itemVariants } from '@/lib/constants';
 import { Card } from '@/components/ui/card';
 import { timeAgo } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import useCreativeAiStore from '@/store/useCreativeAiStore';
-import { toast } from 'sonner';
+
 const RecentPrompts = () => {
-    const { prompts, setPage } = usePromptStore()
-    const { addMultipleOutlines, currentAiPrompt, setCurrentAiPrompt, outlines } = useCreativeAiStore()
-    const handleEdit = (id: string) => {
-        const prompt = prompts.find((prompt) => prompt.id === id)
-        if (prompt) {
-            setPage("creative-ai");
-            addMultipleOutlines(prompt.outlines)
-            setCurrentAiPrompt(prompt.title)
-        }
-        else {
-            toast.error('Error', {
-                description: 'Prompt not found'
-            })
-        }
-    }
+    const { prompts } = usePromptStore()
+   
+    // const handleEdit = (id: string) => {
+    //     const prompt = prompts.find((prompt) => prompt.id === id)
+    //     if (prompt) {
+    //         setPage("creative-ai");
+    //         addMultipleOutlines(prompt.outlines)
+    //         setCurrentAiPrompt(prompt.title)
+    //     }
+    //     else {
+    //         toast.error('Error', {
+    //             description: 'Prompt not found'
+    //         })
+    //     }
+    // }
     return (
         <motion.div
             variants={containerVaraints}

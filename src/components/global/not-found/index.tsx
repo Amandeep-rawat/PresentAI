@@ -4,7 +4,7 @@ import { ImageOff } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 
 const NotFound = () => {
   // const router = useRouter();

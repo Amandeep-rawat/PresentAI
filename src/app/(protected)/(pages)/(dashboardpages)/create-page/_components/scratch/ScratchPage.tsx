@@ -2,7 +2,6 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import {motion} from 'framer-motion'
-import { AnimatePresence } from 'framer-motion';
 import { containerVaraints, itemVariants } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, RotateCcw } from 'lucide-react';
@@ -14,7 +13,6 @@ import { OutlineCard } from '@/lib/types';
 import { v4} from "uuid"
 import { toast } from 'sonner';
 import { createProject } from '@/actions/projects';
-import { describe } from 'node:test';
 import { useSlideStore } from '@/store/useSlideStore';
 type Props={
     onBack:()=>void;
@@ -24,7 +22,7 @@ const ScratchPage = ({onBack}:Props) => {
 
 
     const router =useRouter()
-    const {project,setProject,setSlides,slides}=useSlideStore()
+    const {setProject,slides}=useSlideStore()
     const {outlines,addMultipleOutlines,resetOutlines,addOutlines}=useScratchStore()
     const [editText,setEditText]=useState('')
     const [editingCards,setEditingCards]=useState<string | null>(null)

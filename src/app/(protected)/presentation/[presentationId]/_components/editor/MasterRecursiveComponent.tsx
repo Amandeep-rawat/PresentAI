@@ -14,7 +14,6 @@ import NumberedList, { BulletList, TodoList } from '@/components/global/editor/c
 import CallOutBox from '@/components/global/editor/components/CallOutBox';
 import CodeBlock from '@/components/global/editor/components/CodeBlock';
 import TableOfContents from '@/components/global/editor/components/TableOfContents';
-import { Divide } from 'lucide-react';
 import Divider from '@/components/global/editor/components/Divider';
 type MasterRecursiveComponentProps = {
     content: ContentItem;
@@ -30,7 +29,7 @@ type MasterRecursiveComponentProps = {
 
 const ContentRenderer: React.FC<MasterRecursiveComponentProps> = React.memo((
     {
-        content, isEditable, onContentChange, slideId, index, isPreview
+        content, isEditable, onContentChange, slideId,  isPreview
     }
 ) => {
 

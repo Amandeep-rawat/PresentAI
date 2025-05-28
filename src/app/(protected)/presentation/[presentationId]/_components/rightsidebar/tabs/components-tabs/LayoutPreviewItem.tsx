@@ -12,7 +12,7 @@ type Props = {
      component?:LayoutSlides
 }
 
-const LayoutPreviewItem = ({name,Icon,onClick,isSelected,type,component}: Props) => {
+const LayoutPreviewItem = ({name,Icon,onClick,isSelected}: Props) => {
   
     return (
     <Button onClick={onClick} className={cn(`flex flex-col items-center cursor-grab active:cursor-grabbing gap-2 p-2 rounded-lg hover:bg-primary transition-all duration-200`,'text-center w-full h-full hover:scale-105 transform ',isSelected && 'ring-2 ring-blue-500')}>

@@ -56,6 +56,7 @@ const ProjectCard = ({ projectId, title, createdAt, themeName, isDelete, slideDa
       })
       setLoading(false);
     } catch (error) {
+      console.log(error);
       toast("Error", {
         description: "something went wrong"
       })
@@ -88,6 +89,7 @@ const ProjectCard = ({ projectId, title, createdAt, themeName, isDelete, slideDa
       })
       setLoading(false);
     } catch (error) {
+      console.log(error);
       toast("Error", {
         description: "something went wrong"
       })

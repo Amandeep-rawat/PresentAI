@@ -15,7 +15,7 @@ import Editor from './_components/editor/Editor';
 import EditorSidebar from './_components/rightsidebar';
 const page = () => {
   // wip 
-  const { slides, currentTheme, project, setCurrentTheme, setProject, setSlides } = useSlideStore()
+  const {  currentTheme,  setCurrentTheme, setProject, setSlides } = useSlideStore()
   const params = useParams();
   const { setTheme } = useTheme();
   const [isLoading, setIsLoading] = React.useState(true)

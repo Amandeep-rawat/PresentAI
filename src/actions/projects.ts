@@ -1,6 +1,6 @@
 
 "use server"
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { client } from "@/lib/prisma";
 import { onAuthenticateUser } from "./user"
 import { OutlineCard } from "@/lib/types";

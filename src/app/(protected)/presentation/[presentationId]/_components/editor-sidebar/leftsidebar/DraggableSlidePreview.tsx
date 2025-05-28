@@ -12,7 +12,7 @@ type Props = {
 }
 
 const DraggableSlidePreview = ({slide,index,moveSlide}: Props) => {
-    const {currentSlide,setCurrentSlide,currentTheme}=useSlideStore()
+    const {currentSlide,setCurrentSlide}=useSlideStore()
     const ref=useRef<HTMLDivElement>(null)
     const [{isDragging},drag]=useDrag({
         type:'SLIDE',
@@ -25,7 +25,7 @@ const DraggableSlidePreview = ({slide,index,moveSlide}: Props) => {
 
     const [,drop]=useDrop({
         accept:'SLIDE',
-        hover(item:{index:number},monitor){
+        hover(item:{index:number}){
             if(!ref.current ){
                 return 
             }

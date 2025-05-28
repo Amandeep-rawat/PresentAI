@@ -1,5 +1,6 @@
 
 "use server";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CohereClientV2 } from "cohere-ai";
 import { client } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
@@ -63,7 +64,7 @@ Ensure that the JSON is valid and properly formatted. Do not include any other t
         };
       } catch (err) {
         return {
-          
+
           status: 500,
           error: "Invalid JSON format",
         };

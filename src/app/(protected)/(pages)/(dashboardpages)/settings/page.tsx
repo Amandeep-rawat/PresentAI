@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 const Page = () => {
   const router = useRouter();
-  const [checkUser, setCheckUser] = useState<any>(null);
+  const [ setCheckUser] = useState<any>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
