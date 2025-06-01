@@ -47,10 +47,10 @@ return heading
 }
 
 
-const Heading1=createHeading('Heading1','text-4xl')
-const Heading2=createHeading('Heading2','text-3xl')
-const Heading3=createHeading('Heading3','text-2xl')
+const Heading1=createHeading('Heading1','text-4xl max-sm:text-3xl ')
+const Heading2=createHeading('Heading2','text-3xl max-sm:text-2xl')
+const Heading3=createHeading('Heading3','text-2xl max-sm:text-xl')
 const Heading4=createHeading('Heading4','text-xl')
-const Title=createHeading('Title','text-5xl')
+const Title=createHeading('Title','text-5xl max-sm:text-4xl')
 // const Heading2=createHeading('Heading2','text-3xl')
 export {Heading1,Heading2,Heading3,Heading4,Title}

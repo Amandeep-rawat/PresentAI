@@ -17,14 +17,14 @@ const CustomImage = ({src,alt,className,isPreview,contentId,onContentChange,isEd
   const {currentTheme}=useSlideStore()
 // wip add open ai image
   return (
-    <div className={`relative group w-full h-full rounded-lg`}>
+    <div className={`relative group overflow-hidden w-full ${!isPreview ? '!h-[300px]' : 'h-full'}  rounded-lg`}>
         <Image
         style={{color:currentTheme.accentColor}}
     src={src} // Assuming the image type is jpeg, replace it with the appropriate type (e.g., png, jpg, etc.)
     alt={alt}
     width={isPreview ? 48 : 800}
     height={isPreview ? 48 : 800}
-    className={`w-full h-full rounded-lg object-cover ${className}`}
+    className={`w-full !h-full  rounded-lg object-cover ${className}`}
 />
 
 

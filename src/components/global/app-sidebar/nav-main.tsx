@@ -26,7 +26,7 @@ const NavMain = ({items}:{
                 items.map((item)=>{
                     return (
                         <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild tooltip={item.title} className={`${pathname.includes(item.url) && 'bg-blue-600'}`}>
+                <SidebarMenuButton asChild tooltip={item.title} className={`${pathname.includes(item.url) && 'bg-blue-600 text-white dark:text-black'}`}>
             <Link href={item.url} className={`text-lg ${pathname.includes(item.url) && 'font-bold'}`}>
             
                 <item.icon className='w-5 h-5'/>

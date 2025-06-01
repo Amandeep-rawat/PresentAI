@@ -110,14 +110,14 @@ if(isEditable){
 }
     }
    
-   return <div ref={ref} className={cn('w-full rounded-lg shadow-lg relative p-0 min-h-[400px] max-h-[800px] ','shadow-xl transition-shadow duration-300','flex flex-col ',index === currentSlide ? 'ring-2 ring-blue-500 ring-offset-2': '',slide.className, isDragging ? 'opacity-50' : 'opacity-100')}
+   return <div ref={ref} className={cn('w-full rounded-lg shadow-lg relative p-0 min-h-[400px] max-h-[800px] ','shadow-xl transition-shadow duration-300','flex flex-col ',index === currentSlide ? 'ring-2 ring-blue-500 ring-offset-2': '', isDragging ? 'opacity-50' : 'opacity-100')}
    style={{
     backgroundImage:currentTheme.gradientBackground
    }}
    onClick={()=>setCurrentSlide(index)}
    >
 
-<div className="h-full w-full flex-grow overflow-hidden">
+<div className="h-full !w-full flex-grow overflow-hidden">
     <MasterRecursiveComponent content={slide.content} onContentChange={handleContentChange} slideId={slide.id} index={index} isPreview={false} isEditable={isEditable}/>
 </div>
 {isEditable && (
@@ -211,7 +211,7 @@ return ()=>{
 }
     },[isEditable,slides,project])
   return (
-    <div className='flex-1 flex flex-col h-full max-w-3xl mx-auto px-4 mb-20'>
+    <div className='flex-1 flex flex-col h-full max-w-3xl mx-auto max-sm:px-1 px-4 mb-20'>
 
         {
             loading ? <div className='w-full px-4 flex flex-col space-y-6'>
@@ -220,7 +220,7 @@ return ()=>{
                 <Skeleton className='h-52 w-full'/>
             </div> : (
                 <ScrollArea className='flex-1 mt-8'>
-                    <div className="px-4  pb-4 space-y-4 pt-2">
+                    <div className="px-4 max-sm:px-1  pb-4 space-y-4 pt-2">
                       
                         {orderedSlides.map((slide,index)=>(
                             <React.Fragment  key={slide.id ||index}>

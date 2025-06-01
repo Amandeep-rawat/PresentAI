@@ -13,7 +13,7 @@ import ThemeChooser from './tabs/ThemeChooser'
 
 const EditorSidebar = () => {
   return (
-    <div className='fixed top-1/2 right-0 transform -translate-y-1/2 z-10'><div className='rounded-xl border-r-0 border border-gray-400 shadow-lg p-2 flex flex-col items-center space-y-4'>
+    <div className='fixed max-sm:hidden top-1/2 right-0 transform -translate-y-1/2 z-10'><div className='rounded-xl border-r-0 border border-gray-400 shadow-lg p-2 flex flex-col items-center space-y-4'>
         <Popover>
             <PopoverTrigger asChild>
                 <Button variant={"ghost"} size={"icon"} className='h-10 w-10 rounded-full'>

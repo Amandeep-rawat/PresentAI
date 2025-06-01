@@ -6,8 +6,11 @@ import SearchBar from './upper-info-searchbar';
 import ThemeSwitcher from '../mode-toggle';
 
 import NewProjectButton from './new-project-button';
+import { getProjectCount } from '@/actions/projects';
 
-const UpperInfoBar = ({user }:{user:User;}) => {
+const UpperInfoBar = async({user }:{user:User;}) => {
+  const {count}=await getProjectCount()
+ 
 
   return (
     <header className='sticky  bg-background  top-0 z-[10] flex shrink-0  items-center gap-2  p-4 justify-between'>
@@ -18,7 +21,7 @@ const UpperInfoBar = ({user }:{user:User;}) => {
   <ThemeSwitcher/>
   <div className=' flex flex-wrap gap-4 items-center justify-end'>
   
-   <NewProjectButton user={user}/>
+   <NewProjectButton user={user} projectsLength={count as number} />
   </div>
   </div>
     </header>

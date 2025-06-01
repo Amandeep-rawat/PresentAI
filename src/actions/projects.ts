@@ -304,3 +304,25 @@ export const getDeletedProjects=async()=>{
         
     }
 }
+
+export const getProjectCount = async () => {
+  try {
+    const checkUser = await onAuthenticateUser();
+    
+    if (checkUser.status !== 200 || !checkUser.user?.id) {
+      return { status: 403, error: 'User not authenticated' };
+    }
+
+    const count = await client.project.count({
+      where: {
+        userId: checkUser.user.id,
+        // No need to filter isDeleted, as you want total count
+      },
+    });
+
+    return { status: 200, count };
+  } catch (error) {
+    console.error('Error fetching project count:', error);
+    return { status: 500, error: 'Something went wrong' };
+  }
+};

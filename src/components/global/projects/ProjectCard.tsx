@@ -28,7 +28,7 @@ const ProjectCard = ({ projectId, title, createdAt, themeName, isDelete, slideDa
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const theme = themes.find((theme) => theme.name === themeName) ?? themes[0];
-  const { setSlides } = useSlideStore();
+  const { setSlides,project } = useSlideStore();
 
   const handleRecover = async () => {
     setLoading(true);
@@ -97,8 +97,15 @@ const ProjectCard = ({ projectId, title, createdAt, themeName, isDelete, slideDa
   }
 
   const handleNavigation = () => {
-    setSlides(JSON.parse(JSON.stringify(slideData)))
-    router.push(`/presentation/${projectId}`)
+    console.log("project value is ",project,project?.slides)
+    if(project?.slides===null){
+      router.push(`/presentation/${projectId}/select-theme`)
+    }
+    else{
+
+      setSlides(JSON.parse(JSON.stringify(slideData)))
+      router.push(`/presentation/${projectId}`)
+    }
   }
   return (
     <motion.div variants={itemVariants} className={`group w-full flex flex-col gap-y-3 rounded-xl p-3 transition-colors${!isDelete && 'hover:bg-muted/50'} `}>
