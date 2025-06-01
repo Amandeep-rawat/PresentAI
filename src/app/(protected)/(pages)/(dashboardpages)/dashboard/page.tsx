@@ -1,4 +1,4 @@
-import { getAllProjects, getProjectCount } from '@/actions/projects';
+import { getAllProjects } from '@/actions/projects';
 import Projects from '@/components/global/projects/AllProjects'
 import Notfound from '@/components/global/not-found';
 // import ProjectCard from '@/components/global/projects/project-card';

@@ -71,7 +71,7 @@ const ThemePicker = ({ onThemeSelect, selectedTheme, themes }: Props) => {
   if (loading) {
     return <div className="w-full h-[60vh] flex items-center justify-center">
       {/* Core Loader Modal */}
-      <Loader loadingStates={loadingStates} loading={loading} duration={2000} />
+      <Loader loadingStates={loadingStates} loading={loading} duration={10000} />
 
      
 
