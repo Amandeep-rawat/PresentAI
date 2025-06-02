@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/th/id/**', // Match the correct pathname pattern for the Bing images
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
      {
   protocol: 'https',
   hostname: 'res.cloudinary.com',

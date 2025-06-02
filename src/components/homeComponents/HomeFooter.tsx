@@ -3,7 +3,7 @@ import { Sparkles, Twitter, Github, Linkedin, Mail } from "lucide-react"
 
 export default function HomeFooter() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
+    <footer id="contact" className="bg-slate-900 border-t border-slate-800">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo & Description */}
@@ -16,16 +16,14 @@ export default function HomeFooter() {
             </div>
             <p className="text-gray-400 mb-6">Transform your ideas into stunning presentations with the power of AI.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+             
+              <a target="_blank" href="https://www.github.com/Amandeep-rawat" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a target="_blank" href="https://www.linkedin.com/in/amandeep-rawat-1622a82ba/" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:ar0466467@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>

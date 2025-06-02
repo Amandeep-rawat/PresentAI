@@ -1,17 +1,122 @@
 
-import { motion } from "framer-motion"
-import { ArrowRight, Sparkles, Zap, Users, Crown, Check, Star, Play, Wand2, Brain, Rocket, Shield } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
+import { ArrowRight, Sparkles, Zap, Users, Crown, Check, Star, Play, Wand2, Brain, Rocket, Shield, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import HomeFooter from "@/components/homeComponents/HomeFooter"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 const HomeBody = () => {
 
     const router=useRouter()
+    const [showDemo, setShowDemo] = useState(false)
+
+  const handleWatchDemo = () => {
+    setShowDemo(true)
+  }
+
+  const closeDemo = () => {
+    setShowDemo(false)
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+
+ {/* Demo Video Popup Overlay */}
+      <AnimatePresence>
+        {showDemo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeDemo}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
+              className="relative bg-slate-900 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-slate-700"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeDemo}
+                className="absolute top-4 right-4 z-10 bg-slate-800/80 hover:bg-slate-700 text-white rounded-full p-2 transition-all duration-200 hover:scale-110"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Demo Header */}
+              <div className="p-6 border-b border-slate-700">
+                <h3 className="text-2xl font-bold text-white mb-2">Product Demo</h3>
+                <p className="text-gray-400">See how our AI creates stunning presentations in seconds</p>
+              </div>
+
+              {/* Video Container */}
+              <div className="relative aspect-video bg-slate-800">
+                {/* Placeholder for video - replace with actual video when available */}
+                {/* <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Play className="w-12 h-12 text-white ml-1" />
+                    </div>
+                    <h4 className="text-xl font-semibold text-white mb-2">Demo Video Coming Soon</h4>
+                    <p className="text-gray-400 mb-4">Your video will be embedded here</p>
+                    <div className="text-sm text-gray-500">
+                      <p>Supported formats: MP4, YouTube, Vimeo</p>
+                      <p>Recommended resolution: 1920x1080</p>
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* When you have a video, replace the above div with something like: */}
+                
+                <video 
+                  className="w-full h-full object-cover"
+                  controls
+                  autoPlay
+                  muted
+                >
+                  <source src="/path-to-your-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+               
+
+              
+              </div>
+
+              {/* Demo Footer */}
+              <div className="p-6 bg-slate-800/50">
+                <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
+                  <div>
+                    <p className="text-white font-medium">Ready to get started?</p>
+                    <p className="text-gray-400 text-sm">Create your first AI presentation today</p>
+                  </div>
+                  <Button
+                    onClick={() => {
+                      closeDemo()
+                      router.push("/dashboard")
+                    }}
+                    className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-6 py-2 rounded-lg transition-all duration-300"
+                  >
+                    Start Free Trial
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
+
+
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section id="demo" className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10" />
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <motion.div
@@ -63,7 +168,8 @@ const HomeBody = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-gray-600 cursor-pointer text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg rounded-xl"
+                 onClick={handleWatchDemo}
+                className="border-gray-600 cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg rounded-xl"
               >
                 <Play className="mr-2 w-5 h-5" />
                 Watch Demo
@@ -270,7 +376,7 @@ const HomeBody = () => {
                 features: [
                   "1 AI-generated presentation",
                   "Basic templates",
-                  "Standard export options",
+                  "No export options",
                   "Community support",
                 ],
                 buttonText: "Start Free Trial",
@@ -342,14 +448,19 @@ const HomeBody = () => {
                     <ul className="space-y-4 mb-8">
                       {plan.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center gap-3">
-                          <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                          {
+                            plan.name==='Free Trial' && featureIndex===2 ? (
+                              <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                            ):                           <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+
+                          }
                           <span className="text-gray-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <Button
-                      className={`w-full py-3 text-lg font-semibold rounded-xl transition-all duration-300 ${
+                    <Button onClick={()=> router.push('/dashboard')}
+                      className={`w-full py-3 text-lg font-semibold cursor-pointer rounded-xl transition-all duration-300 ${
                         plan.popular
                           ? "bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white shadow-2xl hover:shadow-purple-500/25"
                           : "bg-slate-700 hover:bg-slate-600 text-white"
