@@ -1,5 +1,5 @@
 "use client"
-import { Sparkles, Twitter, Github, Linkedin, Mail } from "lucide-react"
+import { Sparkles, Github, Linkedin, Mail } from "lucide-react"
 
 export default function HomeFooter() {
   return (
