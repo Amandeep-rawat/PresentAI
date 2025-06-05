@@ -141,9 +141,9 @@ const Layout = ({ children }: Props) => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="lg:w-1/2 w-full bg-background flex items-center justify-center p-8 lg:p-12 min-h-screen lg:min-h-0"
+        className="lg:w-1/2 w-full bg-background flex items-center justify-center max-sm:p-0 p-8 lg:p-12 min-h-screen lg:min-h-0"
       >
-        <div className="w-full max-w-md">
+        <div className="w-full sm:max-w-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ const Layout = ({ children }: Props) => {
             <p className="text-gray-600 dark:text-gray-400">Continue your AI presentation journey</p>
           </motion.div>
 
-          <motion.div
+          <motion.div className=" flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
