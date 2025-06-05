@@ -1,6 +1,6 @@
 // const query = 'nature';
 
-// fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=1&client_id=${'04RfDO12OXE0l5L1sNae-01L-Vd6dmGSNwFzaM08x7U'}`)
+// fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=1&client_id=${'add your id fo key'}`)
 //   .then(res => res.json())
 //   .then(data => {
 //     const image = data.results[0];
