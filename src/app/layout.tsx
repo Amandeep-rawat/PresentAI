@@ -21,7 +21,9 @@ export const metadata: Metadata = {
   description:
     "Create stunning presentations in seconds with AI. Transform your ideas into professional slides effortlessly.",
 
-
+icons:{
+  icon:"icon.ico",
+}
 
 }
 
@@ -41,7 +43,9 @@ export default function RootLayout({
     }}>
 
     <html lang="en" suppressHydrationWarning>
-     
+     <head>
+      <link rel="shortcut icon" href="icon.ico" type="image/x-icon" />
+     </head>
       <body
         className=
         {`${oxanium.variable} antialiased`}

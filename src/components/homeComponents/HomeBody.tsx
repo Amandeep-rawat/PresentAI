@@ -166,7 +166,16 @@ const HomeBody = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button onClick={()=>router.push("/dashboard")}
+              <Button onClick={()=>
+              {
+                if(!isSignedIn){
+                  router.push("/sign-in")
+                }
+                else{
+
+                  router.push("/dashboard")}
+                }
+              }
                 size="lg"
                 className=" cursor-pointer bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
               >
