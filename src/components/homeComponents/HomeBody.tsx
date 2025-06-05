@@ -6,10 +6,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import HomeFooter from "@/components/homeComponents/HomeFooter"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { useUser } from "@clerk/nextjs"
 const HomeBody = () => {
 
     const router=useRouter()
     const [showDemo, setShowDemo] = useState(false)
+    const { isSignedIn}=useUser()
 
   const handleWatchDemo = () => {
     setShowDemo(true)
@@ -73,7 +75,7 @@ const HomeBody = () => {
 
                 {/* When you have a video, replace the above div with something like: */}
                 
-                <video 
+                <video src="https://res.cloudinary.com/drzy2f8he/video/upload/v1749026097/home_login_MERGE_Videobolt_net_1_V1_online-video-cutter.com_wrobpa.mp4"
                   className="w-full h-full object-cover"
                   controls
                   autoPlay
@@ -97,7 +99,13 @@ const HomeBody = () => {
                   <Button
                     onClick={() => {
                       closeDemo()
-                      router.push("/dashboard")
+                      if(!isSignedIn){
+                        router.push("/sign-in")
+                      }
+                      else{
+
+                        router.push("/dashboard")
+                      }
                     }}
                     className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white px-6 py-2 rounded-lg transition-all duration-300"
                   >

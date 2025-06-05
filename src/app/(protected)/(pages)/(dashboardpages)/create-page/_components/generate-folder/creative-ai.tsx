@@ -161,7 +161,7 @@ className='bg-primary/10 p-4 rounded-xl'
 
 >
 <div className="flex flex-col sm:flex-row justify-between gap-3 items-center rounded-xl">
-  <Input placeholder='Enter Prompt and add to the cards ...'
+  <Input placeholder='Enter PPT Prompt and add to the cards ...'
   className='text-base sm:text-4xl border-0 focus-visible:ring-0 shadow-none p-0 bg-transparent flex-grow' required value={currentAiPrompt} onChange={(e)=>setCurrentAiPrompt(e.target.value)}
   />
 
@@ -190,7 +190,7 @@ className='bg-primary/10 p-4 rounded-xl'
 </div>
 </motion.div>
       <div className="w-full flex justify-center items-center">
-        <Button disabled={isGenerating} onClick={generateOutline} className='font-medium items-center text-lg glex gap-2'>
+        <Button disabled={isGenerating} onClick={generateOutline} className='font-medium items-center text-lg cursor-pointer flex gap-2'>
       {
         isGenerating? (
           <>
@@ -208,11 +208,11 @@ className='bg-primary/10 p-4 rounded-xl'
       }}/>  
       
       {
-        outlines.length>0 && <Button className='w-full' onClick={handleGenerate} disabled={isGenerating}>
+        outlines.length>0 && <Button className='w-full bg-blue-500 hover:bg-blue-600 text-white cursor-pointer'   onClick={handleGenerate} disabled={isGenerating}>
           {
             isGenerating ? <>
             <Loader2 className='animate-spin ml-2'/>Generating..
-            </> : "Generate"
+            </> : "Generate PPT"
           }
         </Button>
 

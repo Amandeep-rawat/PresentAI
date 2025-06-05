@@ -99,7 +99,7 @@ const handleGenerate=async()=>{
       
       >
           <div className="flex flex-col sm:flex-row justify-between gap-3 items-center rounded-xl">
-            <Input value={editText} onChange={(e)=>setEditText(e.target.value)} placeholder='Enter Prompt and add the cards' className='text-base sm:text-xl border-0 focus-visible:ring-0 shadow-none p-0 bg-transparent flex-grow '/>
+            <Input value={editText} onChange={(e)=>setEditText(e.target.value)} placeholder='Enter PPT Prompt and add the cards' className='text-base sm:text-xl border-0 focus-visible:ring-0 shadow-none p-0 bg-transparent flex-grow '/>
             <div className="flex items-center gap-3">
             <Select value={outlines.length>0 ? outlines.length.toString():'0'}>
               <SelectTrigger className='w-fit gap-2 shadow-xl font-semibold'>

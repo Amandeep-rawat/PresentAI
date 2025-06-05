@@ -120,7 +120,7 @@ const ProjectCard = ({ projectId, title, createdAt, themeName, isDelete, slideDa
       <div className="w-full">
         <div className="space-y-1">
           <h3 className='font-semibold text-base text-primary line-clamp-1'>
-            {title} Fake title
+            {title} 
           </h3>
           <div className="flex w-full justify-between items-center gap-2">
             <p suppressHydrationWarning className='text-sm text-muted-foreground'>

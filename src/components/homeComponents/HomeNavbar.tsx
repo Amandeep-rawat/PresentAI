@@ -10,7 +10,7 @@ import { useUser } from "@clerk/nextjs"
 export default function HomeNavbar() {
   const [isOpen, setIsOpen] = useState(false)
 const router=useRouter()
-  const {  user } = useUser();
+  const {  user,isSignedIn } = useUser();
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -52,7 +52,17 @@ const router=useRouter()
             </Button>
             }
             
-            <Button onClick={()=> router.push('/dashboard')} className="bg-gradient-to-r from-purple-600 to-cyan-600 cursor-pointer hover:from-purple-700 hover:to-cyan-700 text-white">
+            <Button onClick={()=> 
+              {
+                if(!isSignedIn){
+                  router.push('/sign-in')
+                }
+                else{
+
+                  router.push('/dashboard')
+                }
+              }
+              } className="bg-gradient-to-r from-purple-600 to-cyan-600 cursor-pointer hover:from-purple-700 hover:to-cyan-700 text-white">
               Start Free Trial
             </Button>
           </div>
@@ -85,10 +95,23 @@ const router=useRouter()
                 Contact
               </a>
               <div className="flex flex-col gap-2 pt-4 border-t border-slate-800">
+                 {
+                  !user &&
                 <Button variant="ghost" className="text-gray-300 hover:text-white justify-start">
                   Sign In
                 </Button>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white">
+                 }
+                <Button onClick={()=> 
+              {
+                if(!isSignedIn){
+                  router.push('/sign-in')
+                }
+                else{
+
+                  router.push('/dashboard')
+                }
+              }
+              }  className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white">
                   Start Free Trial
                 </Button>
               </div>

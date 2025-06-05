@@ -90,11 +90,21 @@ const CreatePage = ({ onSelectOption }: Props) => {
                 >
                   <Button
                     variant={option.highlight ? 'default' : 'outline'}
-                    className="w-fit rounded-xl font-bold"
+                    className="w-fit rounded-xl cursor-pointer font-bold"
                     size={'sm'}
-                    onClick={() => onSelectOption(option.type)}
+                    onClick={() => 
+                    {
+                      if(option.type==='template'){
+                        alert('COMING SOON. YOU CAN SELECT CREATIVE AI🤖')
+                      }
+                      else{
+
+                        onSelectOption(option.type)
+                      }
+                    }
+                      }
                   >
-                    {option.highlight ? 'Generate' : 'Continue'}
+                    {option.highlight ? 'Generate'  : option.type==='template'?'Coming soon': 'Continue'}
                   </Button>
                 </motion.div>
               </motion.div>

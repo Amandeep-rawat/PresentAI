@@ -74,7 +74,7 @@ useEffect(()=>{
 
                 </motion.div>
             </AnimatePresence>
-            <Button variant={"ghost"} size={"icon"} className='absolute top-4 right-4 text-white' onClick={onClose}>
+            <Button variant={"ghost"} size={"icon"} className='absolute bg-red-500 top-4 right-4 text-white' onClick={onClose}>
                 <X className='h-6 w-6'/>
             </Button>
             <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4'>

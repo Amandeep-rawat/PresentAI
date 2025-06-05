@@ -4,37 +4,19 @@ import { Button } from '@/components/ui/button';
 import {  SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { SignedIn, UserButton, useUser } from '@clerk/nextjs';
 import { User } from '@prisma/client';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 const NavFooter = ({prismaUser}:{prismaUser:User}) => {
     const {isLoaded,isSignedIn,user}=useUser();
+    const router=useRouter();
     const [loading]=useState(false);
     // const router=useRouter();
     if(!isLoaded || !isSignedIn){
         return null
     }
 
-    // const handleUpgrading=async()=>{
-
-    // setLoading(true);
-    // try {
-    //     const res=await buySubscription(prismaUser.id);
-    //     if(res.status!==200){
-    //         toast.error('Error',{
-    //             description:'Failed to Upgrade subscription'
-    //         })
-    //         return;
-    //     }
-    //     router.push(res.url);
-    // } catch (error) {
-    //      toast.error('Error',{
-    //         description:'Something went wrong'
-    //      })
-    // }
-    // finally{
-    //     setLoading(false);
-    // }
-    // }
+    
   return (
     <SidebarMenu>
 <SidebarMenuItem>
@@ -53,8 +35,8 @@ const NavFooter = ({prismaUser}:{prismaUser:User}) => {
                     <div className='w-full bg-transparent  bg-gradient-to-br from-purple-600 to-pink-600 p-[1px] rounded-full'>
                         <Button  variant={"default"}
                         
-                        // onClick={handleUpgrading}
-                         size={"lg"} className='w-full dark:bg-black dark:text-white rounded-full'>
+                        onClick={()=> router.push("/pricing")}
+                         size={"lg"} className='cursor-pointer w-full dark:bg-black dark:text-white rounded-full'>
 
 {
     loading? "Upgrading" : "Upgrade"

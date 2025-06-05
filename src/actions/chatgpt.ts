@@ -649,15 +649,13 @@ const generateImageUrl = async (prompt: string): Promise<string> => {
 
     const imageUrl = image.urls.regular;
     
-    // // Trigger Unsplash download endpoint as per production terms
-    // await fetch(`https://api.unsplash.com/photos/${image.id}/download?client_id=${process.env.UNSPLASH_ACCESS_KEY}`);
+   
     const photographer = image.user.name.replace(/\|/g, ''); // precaution
 const photographerLink = image.user.links.html;
 const unsplashLink = image.links.html;
 const downloadLocation = image.links.download_location;
 
-    // ✅ You must attribute the photographer (log it or attach with content)
-    // console.log(`Photo by ${image.user.name} on Unsplash: ${image.links.html}`);
+  
 
      // Combine everything with a separator
     return `${imageUrl}||${photographer}||${photographerLink}||${unsplashLink}||${downloadLocation}`;

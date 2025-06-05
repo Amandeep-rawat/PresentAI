@@ -2,7 +2,9 @@ import React from 'react';
 import { SignIn } from '@clerk/nextjs';
 const Signin = () => {
   return (
-    <SignIn/>
+    <SignIn 
+          
+          signUpUrl="sign-up" />
   );
 }
 

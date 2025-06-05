@@ -6,7 +6,7 @@ const AuthCallbackPage = async() => {
     console.log("authcallabck apge ");
     
     const auth=await onAuthenticateUser()
-    console.log("auth",auth)
+    // console.log("auth",auth)
     if(auth.status===200 || auth.status===201){
         redirect('/dashboard')
     }

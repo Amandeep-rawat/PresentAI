@@ -27,7 +27,7 @@ const Navbar = ({presentationId}:Props) => {
         , color:currentTheme.accentColor
     }} className='fixed top-0  right-0 left-0 z-50 w-full h-20 flex justify-between items-center py-4 border-b'>
       <Link href={`/dashboard`} passHref>
-        <Button variant={"outline"} className='flex items-center gap-2' style={{
+        <Button variant={"outline"} className='flex cursor-pointer items-center gap-2' style={{
             backgroundColor:currentTheme.backgroundColor
         }}><Home />
         <span className='hidden sm:inline'>Return Home</span>

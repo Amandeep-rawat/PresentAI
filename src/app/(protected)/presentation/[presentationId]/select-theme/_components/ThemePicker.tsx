@@ -71,7 +71,7 @@ const ThemePicker = ({ onThemeSelect, selectedTheme, themes }: Props) => {
   if (loading) {
     return <div className="w-full h-[60vh] flex items-center justify-center">
       {/* Core Loader Modal */}
-      <Loader loadingStates={loadingStates} loading={loading} duration={10000} />
+      <Loader loadingStates={loadingStates} loading={loading} duration={4000} />
 
      
 
@@ -95,7 +95,7 @@ const ThemePicker = ({ onThemeSelect, selectedTheme, themes }: Props) => {
           }}>Choose from our curated collection or generate a custom theme</p>
 
         </div>
-        <Button className='w-full h-12 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300' style={{
+        <Button className='w-full cursor-pointer h-12 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300' style={{
           backgroundColor: selectedTheme.accentColor, color: selectedTheme.backgroundColor,
         }} onClick={HandleGenerateLayouts}  >
           {
